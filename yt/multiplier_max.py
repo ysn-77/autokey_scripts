@@ -3,7 +3,7 @@ import time
 output = system.exec_command("xset -q | grep 'Num Lock:\s*on' || true", getOutput=True)
 num_lock_on = (output != '')
 
-key= '4'
+key= '-'
 replacement= '*' + key
 
 def main():
@@ -23,9 +23,7 @@ def main():
         if content == escape_sequence or content[-1] == combiner or content[-1] == seperator:
             return None
 
-        if content[-1] == '.':
-            keyboard.send_keys('<left>*<right>' + key)
-        elif content[-1] == '*' or content[-1] == '^':
+        if content[-1] == '*' or content[-1] == '^':
             keyboard.send_key(key)
         else:
             keyboard.send_keys(replacement)
