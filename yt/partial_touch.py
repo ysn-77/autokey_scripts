@@ -3,8 +3,8 @@ import time
 output = system.exec_command("xset -q | grep 'Num Lock:\s*on' || true", getOutput=True)
 num_lock_on = (output != '')
 
-key= '4'
-replacement= '*' + key
+key= '`'
+replacement= 't:'
 
 def main():
     seperator=','
@@ -18,20 +18,17 @@ def main():
     keyboard.send_keys("<right>")
     time.sleep(0.05)
 
-    def multiply():
+    def action():
         content = clipboard.get_selection()
-        if content == escape_sequence or content[-1] == combiner or content[-1] == seperator:
-            return None
+        if content[-1] == '*' or content[-1] == '.' or content[-1] == '^' or content[-1] == ':' or (content[-1].isdigit() and content[-2] == ':'):
+	        return None
 
-        if content[-1] == '.':
-            keyboard.send_keys('<left>*<right>' + key)
-        elif content[-1] == '*' or content[-1] == '^':
-            keyboard.send_key(key)
-        else:
-            keyboard.send_keys(replacement)
+        if content != escape_sequence and content[-1] != combiner and content[-1] != seperator:
+            keyboard.send_keys(seperator)
+        keyboard.send_keys(replacement)
 
     try:
-        multiply()
+        action()
 
     except:
         keyboard.send_key(key)

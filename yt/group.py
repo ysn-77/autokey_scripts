@@ -1,4 +1,4 @@
-import time
+
 
 output = system.exec_command("xset -q | grep 'Num Lock:\s*on' || true", getOutput=True)
 num_lock_on = (output != '')
