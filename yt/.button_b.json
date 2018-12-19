@@ -3,18 +3,20 @@
     "description": "button_b",
     "store": {},
     "modes": [
-        3
+        1
     ],
-    "usageCount": 0,
+    "usageCount": 69,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [],
+        "abbreviations": [
+            "b"
+        ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": false,
-        "triggerInside": false,
+        "immediate": true,
+        "triggerInside": true,
         "wordChars": "[\\w]"
     },
     "hotkey": {

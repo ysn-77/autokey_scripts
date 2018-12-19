@@ -3,18 +3,20 @@
     "description": "button_r",
     "store": {},
     "modes": [
-        3
+        1
     ],
-    "usageCount": 0,
+    "usageCount": 10,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [],
+        "abbreviations": [
+            "r"
+        ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": false,
-        "triggerInside": false,
+        "immediate": true,
+        "triggerInside": true,
         "wordChars": "[\\w]"
     },
     "hotkey": {
