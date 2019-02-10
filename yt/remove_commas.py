@@ -3,8 +3,8 @@ import time
 output = system.exec_command("xset -q | grep 'Num Lock:\s*on' || true", getOutput=True)
 num_lock_on = (output != '')
 
-key= '0'
-replacement= '*1' + key
+key= '1'
+replacement= '1'
 
 def main():
     seperator=','
@@ -14,22 +14,15 @@ def main():
 
     clipboard.fill_selection(escape_sequence)
 
-    keyboard.send_keys("<shift>+<left><shift>+<left>")
-    keyboard.send_keys("<right>")
+    keyboard.send_keys('<home>')
+    keyboard.send_keys("<shift>+<end>")
     time.sleep(0.05)
 
-    def multiply():
+    def action():
         content = clipboard.get_selection()
-        if content == escape_sequence or content[-1] == combiner or content[-1] == seperator:
-            return None
-
-        if content[-1] == '*' or content[-1] == '^':
-            keyboard.send_keys(replacement[1:])
-        else:
-            keyboard.send_keys(replacement)
-
+        keyboard.send_keys(content.replace(',', ''))
     try:
-        multiply()
+        action()
 
     except:
         keyboard.send_key(key)

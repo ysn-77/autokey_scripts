@@ -24,7 +24,7 @@ def main():
             return None
 
         if content[-1] == '*' or content[-1] == '^':
-            keyboard.send_key(key)
+            keyboard.send_keys(replacement[1:])
         else:
             keyboard.send_keys(replacement)
 
