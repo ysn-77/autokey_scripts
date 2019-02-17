@@ -24,7 +24,10 @@ def main():
             return None
 
         if content[-1] == '.':
-            keyboard.send_keys('<left>*<right>' + key)
+            if not(content[-2].isdigit()):
+                keyboard.send_keys('<left>*<right>' + key)
+            else:
+                keyboard.send_key(key)
         elif content[-1] == '*' or content[-1] == '^':
             keyboard.send_key(key)
         else:

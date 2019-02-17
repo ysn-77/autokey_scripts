@@ -24,7 +24,7 @@ def main():
 	    if content[-1] == '*' or content[-1] == '.' or content[-1] == '^' or content[-1] == ':' or (content[-1].isdigit() and content[-2] == ':'):
 		    keyboard.send_key(key)
 	    else:
-	        if content != escape_sequence and content[-1] != combiner and content[-1] != seperator:
+	        if content != escape_sequence and content[-1] != combiner and content[-1] != seperator and content[-1] != '!':
 	            keyboard.send_keys(seperator)
 	        keyboard.send_keys(replacement)
 	            
