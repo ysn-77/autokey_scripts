@@ -1,47 +1,12 @@
-import time
+import ytp
+ytp.load_api(keyboard, mouse, store, system, window, clipboard, highlevel, dialog, engine)
 
-output = system.exec_command("xset -q | grep 'Num Lock:\s*on' || true", getOutput=True)
-num_lock_on = (output != '')
-
-key= '5'
-replacement= '*' + key
+key = '5'
 
 def main():
-    seperator=','
-    combiner='+'
+  ytp.multiplier(key, key)
 
-    escape_sequence= '##$'
-
-    clipboard.fill_selection(escape_sequence)
-
-    keyboard.send_keys("<shift>+<left><shift>+<left>")
-    keyboard.send_keys("<right>")
-    time.sleep(0.05)
-
-    def multiply():
-        content = clipboard.get_selection()
-        if content == escape_sequence or content[-1] == combiner or content[-1] == seperator:
-            return None
-
-        if content[-1] == '.':
-            if not(content[-2].isdigit()):
-                keyboard.send_keys('<left>*<right>' + key)
-            else:
-                keyboard.send_key(key)
-        elif content[-1] == '*' or content[-1] == '^':
-            keyboard.send_key(key)
-        else:
-            keyboard.send_keys(replacement)
-
-    try:
-        multiply()
-
-    except:
-        keyboard.send_key(key)
-
-
-if num_lock_on:
-    keyboard.send_key(key)
+if ytp.is_numlock_on():
+  keyboard.send_key(key)
 else:
-    main()
-    
+  main()
