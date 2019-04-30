@@ -4,7 +4,7 @@ output = system.exec_command("xset -q | grep 'Num Lock:\s*on' || true", getOutpu
 num_lock_on = (output != '')
 
 key= '\\'
-replacement= 'right'
+replacement= 'rt'
 
 def main():
     seperator=','
