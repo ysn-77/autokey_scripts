@@ -43,8 +43,9 @@ def multiplier(key, multiple):
         content[-1] == seperator_symbol
       ):
       return
-    if (content[-2] == argument_seperator_symbol or 
-        content[-3] == argument_seperator_symbol
+    if (len(content) >= 3 and (
+        content[-2] == argument_seperator_symbol or 
+        content[-3] == argument_seperator_symbol)
       ):
       keyboard.send_keys(muliplier_symbol+multiple)
     else:
@@ -55,7 +56,7 @@ def multiplier(key, multiple):
 
 def move(key, direction_string):
   clipboard.fill_selection(escape_sequence)
-  keyboard.send_keys("<shift>+<left><shift>+<left><right>")
+  keyboard.send_keys("<shift>+<left><right>")
   time.sleep(seconds_to_wait)
   try:
     content = clipboard.get_selection()
@@ -77,7 +78,22 @@ def move(key, direction_string):
     keyboard.send_key(key)
 
 
-
+def button(key, button_string):
+  clipboard.fill_selection(escape_sequence)
+  keyboard.send_keys("<shift>+<left><right>")
+  time.sleep(seconds_to_wait)
+  try:
+    content = clipboard.get_selection()
+    if (content != escape_sequence and
+        content[-1] != combiner_symbol and
+        content[-1] != seperator_symbol and
+        content[-1] != hold_symbol
+      ):
+      keyboard.send_keys(seperator_symbol+button_string)
+    else:
+      keyboard.send_keys(button_string)
+  except:
+    keyboard.send_key(key)
 
 
 
