@@ -22,6 +22,8 @@ argument_seperator_symbol = ':'
 group_multipler_symbol    = '^'
 decimal_point_symbol      = '.'
 
+touch_command_last_charecter = 't'
+
 escape_sequence = '##$'
 seconds_to_wait = 0.05
 
@@ -95,8 +97,23 @@ def button(key, button_string):
   except:
     keyboard.send_key(key)
 
-
-
+def numpad(key):
+  clipboard.fill_selection(escape_sequence)
+  keyboard.send_keys("<shift>+<left><shift>+<left><shift>+<left><shift>+<left><right>")
+  time.sleep(seconds_to_wait)
+  try:
+    content = clipboard.get_selection()
+    if (len(content) >= 4 and 
+        content[-3] == argument_seperator_symbol
+      ):
+      if content[-4] == touch_command_last_charecter:
+        keyboard.send_keys(argument_seperator_symbol+key)
+      else:
+        keyboard.send_keys(muliplier_symbol+key)
+    else:
+      keyboard.send_key(key)
+  except:
+    keyboard.send_key(key)
 
 
 

@@ -1,7 +1,7 @@
 import ytp
 ytp.load_api(keyboard, mouse, store, system, window, clipboard, highlevel, dialog, engine)
 
-key = '\''
+key = ':'
 
 def main():
   ytp.button(key, 'select')

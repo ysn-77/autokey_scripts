@@ -3,18 +3,20 @@
     "description": "direction_down",
     "store": {},
     "modes": [
-        3
+        1
     ],
-    "usageCount": 2,
+    "usageCount": 3,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
-        "abbreviations": [],
+        "abbreviations": [
+            "]"
+        ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": false,
-        "triggerInside": false,
+        "immediate": true,
+        "triggerInside": true,
         "wordChars": "[\\w]"
     },
     "hotkey": {
