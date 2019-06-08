@@ -4,7 +4,7 @@ ytp.load_api(keyboard, mouse, store, system, window, clipboard, highlevel, dialo
 key = '['
 
 def main():
-  ytp.move(key, 'lt')
+  ytp.move(key, 'left')
 
 if ytp.is_numlock_on():
   keyboard.send_key(key)

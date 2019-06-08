@@ -115,5 +115,19 @@ def numpad(key):
   except:
     keyboard.send_key(key)
 
-
+def hold(key):
+  clipboard.fill_selection(escape_sequence)
+  keyboard.send_keys("<shift>+<left><right>")
+  time.sleep(seconds_to_wait)
+  try:
+    content = clipboard.get_selection()
+    if (content != escape_sequence and
+        content[-1] != combiner_symbol and
+        content[-1] != seperator_symbol
+      ):
+      keyboard.send_keys(seperator_symbol+hold_symbol)
+    else:
+      keyboard.send_keys(hold_symbol)
+  except:
+    keyboard.send_keys(key)
 

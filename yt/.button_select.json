@@ -3,15 +3,15 @@
     "description": "button_select",
     "store": {},
     "modes": [
-        3
+        1
     ],
-    "usageCount": 5,
+    "usageCount": 7,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            ":"
+            "_"
         ],
         "backspace": true,
         "ignoreCase": false,

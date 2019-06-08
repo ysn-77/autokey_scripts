@@ -3,9 +3,9 @@
     "description": "direction_up",
     "store": {},
     "modes": [
-        1
+        3
     ],
-    "usageCount": 18,
+    "usageCount": 34,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,

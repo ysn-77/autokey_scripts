@@ -1,10 +1,10 @@
 import ytp
 ytp.load_api(keyboard, mouse, store, system, window, clipboard, highlevel, dialog, engine)
 
-key = '_'
+key = 'p'
 
 def main():
-  ytp.button(key, 'select')
+  ytp.button(key, key)
 
 if ytp.is_numlock_on():
   keyboard.send_key(key)

@@ -14,8 +14,7 @@ def main():
 
     clipboard.fill_selection(escape_sequence)
 
-    keyboard.send_keys('<home>')
-    keyboard.send_keys("<shift>+<end>")
+    keyboard.send_keys('<ctrl>+a')
     time.sleep(0.05)
 
     def action():

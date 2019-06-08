@@ -1,27 +1,27 @@
 {
     "type": "script",
-    "description": "direction_right",
+    "description": "button_p",
     "store": {},
     "modes": [
-        3
+        1
     ],
-    "usageCount": 69,
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "\\"
+            "p"
         ],
         "backspace": true,
-        "ignoreCase": false,
+        "ignoreCase": true,
         "immediate": true,
         "triggerInside": true,
         "wordChars": "[\\w]"
     },
     "hotkey": {
         "modifiers": [],
-        "hotKey": "\\"
+        "hotKey": null
     },
     "filter": {
         "regex": null,
