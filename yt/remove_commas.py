@@ -19,6 +19,8 @@ def main():
 
     def action():
         content = clipboard.get_selection()
+        if "\n" in content or len(content) > 128:
+            return
         keyboard.send_keys(content.replace(',', ''))
     try:
         action()

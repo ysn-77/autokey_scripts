@@ -7,6 +7,6 @@ def main():
   ytp.hold(key)
 
 if ytp.is_numlock_on():
-  keyboard.send_key(key)
+  keyboard.send_keys(key)
 else:
   main()
