@@ -45,7 +45,9 @@ def multiplier(key, multiple):
         content[-1] == seperator_symbol
       ):
       return
-    if (len(content) >= 3 and (
+    if (content[-1] == '0'):
+      keyboard.send_keys(group_multipler_symbol+multiple)
+    elif (len(content) >= 3 and (
         content[-2] == argument_seperator_symbol or 
         content[-3] == argument_seperator_symbol)
       ):

@@ -4,7 +4,7 @@ ytp.load_api(keyboard, mouse, store, system, window, clipboard, highlevel, dialo
 key = '0'
 
 def main():
-  ytp.multiplier(key, '10')
+  ytp.multiplier(key, '11')
 
 if ytp.is_numlock_on():
   keyboard.send_key(key)
